@@ -1,5 +1,8 @@
 # Herramientas Computacionales: El Arte de la Programación (Gpo 100)
 
+### Profesor:
+Rodolfo Rubén Alvarez González
+
 ## Colaboradores
 
 - Axel Jarquin Morga| A01636324
