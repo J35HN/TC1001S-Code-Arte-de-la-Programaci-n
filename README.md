@@ -13,6 +13,14 @@ Rodolfo Rubén Alvarez González
 - Santiago Reyes Morán | A01639030
 - Jeshua Nava Avila | A01639282
 
+## Como Usar:
+blah blah blah
+
+## Dependencias:
+- Python 3.8
+- OpenCV
+- Numpy
+
 ### Descripción de la Semana Tec:
 En esta semana se pondra práctica lo que hemos aprendido hasta ahora de programación y aprenderemos a usar las herramientas actuales más populares en la industria del desarrollo de software para usar la computadora eficientemente, así como para llevar el control de versiones de código de un proyecto.
 Una vez familiarizados desarrollaremos un proyecto aplicando estándares de programación oficiales , teniendo una experiencia en la imersion a desarrollar código en la industria de tecnologías de información.
