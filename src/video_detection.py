@@ -3,37 +3,31 @@ import time
 import cv2
 
 face = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-home_image = cv2.imread('./img/1.png')
-final_image = cv2.imread(f'./img/{randint(2,11)}.png')
+final_image = cv2.imread(f'./img/{randint(1,11)}.png')
 
 
-def apply_filter(glasses2022, fc, x, y, w, h):
+def apply_filter(imagen, fc, x, y, w, h):
     face_width = w
     face_height = h
 
-    hat_width = int(face_width*1.5) + 1
-    hat_height = int(1*face_height) + 1
-    glasses2022 = cv2.resize(glasses2022, (hat_width, hat_height))
+    img_width = int(face_width*1.5) + 1
+    img_height = int(1*face_height) + 1
+    imagen = cv2.resize(imagen, (img_width, img_height))
 
-    for i in range(hat_height):
-        for j in range(hat_width):
+    for i in range(img_height):
+        for j in range(img_width):
             for k in range(3):
-                if glasses2022[i][j][k] < 200:
+                if imagen[i][j][k] < 200:
                     fc[y + i - int(1.25 * face_height)][x + j -
-                                                        int(0.2 * face_width)][k] = glasses2022[i][j][k]
+                                                        int(0.2 * face_width)][k] = imagen[i][j][k]
 
     return fc
 
 webcam = cv2.VideoCapture(0)
 
-start = time.time()
-
 while True:
 
-    if time.time() - start > 10:
-        used_image = final_image
-    else:
-        used_image = home_image
+    used_image = final_image
 
     size = 4
     (rval, im) = webcam.read()
