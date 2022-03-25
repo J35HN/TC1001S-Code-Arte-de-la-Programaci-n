@@ -1,9 +1,10 @@
-
+from random import randint
+import time
 import cv2
 
 face = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-riddler=cv2.imread('./img/Gordon.png')
-
+home_image = cv2.imread('./img/1.png')
+final_image = cv2.imread(f'./img/{randint(2,11)}.png')
 
 
 def apply_filter(glasses2022, fc, x, y, w, h):
@@ -18,30 +19,32 @@ def apply_filter(glasses2022, fc, x, y, w, h):
         for j in range(hat_width):
             for k in range(3):
                 if glasses2022[i][j][k] < 200:
-                    fc[y + i -int(1.25 * face_height)][x + j-int(0.2 * face_width)][k] = glasses2022[i][j][k]
+                    fc[y + i - int(1.25 * face_height)][x + j -
+                                                        int(0.2 * face_width)][k] = glasses2022[i][j][k]
 
     return fc
 
-global choise
-
-choice = 0
-print('enter your choice filter to launch that: 1="put hat & glasses" ,any number="put fog filters" ')
-choise= int(input('enter your choice:'))
 webcam = cv2.VideoCapture(0)
 
+start = time.time()
 
 while True:
-    size=4
+
+    if time.time() - start > 10:
+        used_image = final_image
+    else:
+        used_image = home_image
+
+    size = 4
     (rval, im) = webcam.read()
     im = cv2.flip(im, 1, 0)
     gray = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
-    fl = face.detectMultiScale(gray,1.19,7)
+    fl = face.detectMultiScale(gray, 1.19, 7)
 
     for (x, y, w, h) in fl:
-        im=apply_filter(riddler, im, x,y,w,h)
+        im = apply_filter(used_image, im, x, y, w, h)
 
-
-    cv2.imshow('Video Con Filtro',im)
+    cv2.imshow('Video Con Filtro', im)
     key = cv2.waitKey(30) & 0xff
     if key == 27:  # The Esc key
-       break
+        break
