@@ -1,6 +1,8 @@
 # Which Batman Character are you?
 Programa que indica tu personaje en el universo de "The Batman".
 
+![image](https://user-images.githubusercontent.com/73572809/160054612-0510a737-69df-45de-b31b-e966051d4f94.png)
+
 ## Herramientas Computacionales: El Arte de la Programación (Gpo 100)
 
 ### Profesor:
@@ -13,8 +15,11 @@ Rodolfo Rubén Alvarez González
 - Santiago Reyes Morán | A01639030
 - Jeshua Nava Avila | A01639282
 
-## Como Usar:
-blah blah blah
+## Como Usar
+
+1. ```git clone https://github.com/J35HN/TC1001S-Code-Arte-de-la-Programacion ```
+2. ```cd src```
+3. ```python video_detection.py```
 
 ## Dependencias:
 - Python 3.8
