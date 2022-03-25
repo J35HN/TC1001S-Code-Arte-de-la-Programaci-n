@@ -30,6 +30,9 @@ Rodolfo Rubén Alvarez González
 -   OpenCV
 -   Numpy
 
+## Referencia:
+Kushal Bhavsar. (2020). Insta_flters_with_python (Source Code). https://github.com/Spidy20/Insta_flters_with_python
+
 ### **Descripción de la Semana Tec**:
 
 En esta semana se pondra práctica lo que hemos aprendido hasta ahora de programación y aprenderemos a usar las herramientas actuales más populares en la industria del desarrollo de software para usar la computadora eficientemente, así como para llevar el control de versiones de código de un proyecto.
